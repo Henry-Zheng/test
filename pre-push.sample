@@ -10,10 +10,10 @@
 # $2 -- URL to which the push is being doneddddsfsdf
 #
 # If pushing without using a named remote those arguments will be equal.ssssdsdfsdf
-#
+#sdfs
 # Information about the commits which are being pushed is supplied as lines to
 # the standard input in the form:
-#
+#dfsdf
 #   <local ref> <local oid> <remote ref> <remote oid>
 #
 # This sample shows how to prevent push of commits where the log message starts
