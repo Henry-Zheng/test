@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# 1. Refresh local knowledge of the server
+echo "Checking if you are up to date with origin..."
+git fetch origin --quiet
+
+# 2. Get current branch info
+branch=$(git rev-parse --abbrev-ref HEAD)
+remote_ref="origin/$branch"
+
+# 3. If the remote branch exists, check for missing commits
+if git rev-parse --verify "$remote_ref" >/dev/null 2>&1; then
+    # Check if remote has commits we don't have
+    if ! git merge-base --is-ancestor "$remote_ref" HEAD; then
+        echo "----------------------------------------------------------"
+        echo "PUSH REJECTED: New changes exist on the server."
+        echo "Action Required: Please 'Pull' (Rebase) before pushing."
+        echo "----------------------------------------------------------"
+        exit 1
+    fi
+fi
+
+# 4. Optional: Block Merge Commits (Force Rebase only)
+if [ $(git rev-list --count --merges "$remote_ref"..HEAD) -gt 0 ]; then
+    echo "PUSH REJECTED: Merge commits detected."
+    echo "Action Required: Please Rebase to keep history linear."
+    exit 1
+fi
+
+exit 0
