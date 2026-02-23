@@ -6,7 +6,7 @@
 #
 # This hook is called with the following parameters:
 #
-# $1 -- Name of the remote to which the push is being donedfdsfds
+# $1 -- Name of the remote to which the push is being donedfdsfdsa's'd'fa's'd
 # $2 -- URL to which the push is being donedddd
 #
 # If pushing without using a named remote those arguments will be equal.ssss
