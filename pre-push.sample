@@ -9,7 +9,7 @@
 # $1 -- Name of the remote to which the push is being donedfdsfds
 # $2 -- URL to which the push is being donedddd
 #
-# If pushing without using a named remote those arguments will be equal.
+# If pushing without using a named remote those arguments will be equal.ssss
 #
 # Information about the commits which are being pushed is supplied as lines to
 # the standard input in the form:
